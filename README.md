@@ -1,4 +1,4 @@
-# React + Vite
+# I'll be using React + Vite to learn and deploy this full stack app.
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
