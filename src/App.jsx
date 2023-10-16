@@ -1,23 +1,36 @@
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
-import HomeLayout from "./pages/HomeLayout";
+import { HomeLayout, DashboardLayout, Login, Register, Landing, Error } from "./pages";
+
 
 const router = createBrowserRouter([
   {
-  path: '/',
-  element: <HomeLayout />
+    path: '/',
+    element: <HomeLayout />,
+    errorElement: <Error />,
+    children: [
+      {
+        index: true,
+        element: <Landing />,
+      },
+      {
+        path: 'register',
+        element: <Register />,
+      },
+      {
+        path: 'login',
+        element: <Login />,
+      },
+      {
+        path: 'dashboard',
+        element: <DashboardLayout />,
+      },
+    ],
   },
-  {
-    path:'/about',
-    element: (
-      <div>
-        <h1>About Page</h1>
-      </div>
-    ),
-  },
+
 ]);
 
 const App = () => {
-  return(
+  return (
     <RouterProvider router={router} />
   );
 };
