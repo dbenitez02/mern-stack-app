@@ -6,3 +6,5 @@ export { default as Navbar } from "./Navbar";
 export { default as LogoutContainer } from "./LogoutContainer";
 export { default as ThemeToggle } from "./ThemeToggle";
 export { default as FormRowSelect } from "./FormRowSelect";
+export { default as SearchContainer } from "./SearchContainer";
+export { default as JobsContainer } from "./JobsContainer";
