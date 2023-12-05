@@ -19,6 +19,7 @@ export const action = async ({ request }) => {
 
 }
 
+
 const Login = () => {
     const navigation = useNavigation();
     const isSubmitting = navigation.state === "Submitting";
@@ -28,7 +29,7 @@ const Login = () => {
             <Form method="post" className="form">
                 <Logo />
                 <h4>Login</h4>
-                <FormRow type="text" name="username" labelText="Username" defualtValue="example@email.com" />
+                <FormRow type="email" name="email" labelText="Username" />
                 <FormRow type="password" name="password" labelText="Password" />
                 <button type="submit" className="btn btn-block" disabled={isSubmitting}>
                     {isSubmitting ? "submitting..." : "submit"}

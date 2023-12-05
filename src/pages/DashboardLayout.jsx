@@ -1,3 +1,4 @@
+/* eslint-disable react-refresh/only-export-components */
 /* eslint-disable react/prop-types */
 import { Outlet, redirect, useLoaderData, useNavigate } from "react-router-dom";
 import Wrapper from "../wrappers/Dashboard";
@@ -16,7 +17,6 @@ export const loader = async () => {
         return redirect('/');
     }
 }
-
 const DashboardContext = createContext();
 
 const DashboardLayout = () => {
@@ -42,6 +42,7 @@ const DashboardLayout = () => {
         navigate('/');
         await customFetch.get('/auth/logout');
         toast.success('Logged out.');
+
     }
 
     return (
@@ -62,7 +63,7 @@ const DashboardLayout = () => {
                 <div>
                     <Navbar />
                     <div className="dashboard-page">
-                        <Outlet />
+                        <Outlet context = {{user}}/>
                     </div>
                 </div>
             </main>

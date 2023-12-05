@@ -1,3 +1,5 @@
+/* eslint-disable no-unused-vars */
+/* eslint-disable react/prop-types */
 import { FaLocationArrow, FaBriefcase, FaCalendarAlt } from 'react-icons/fa';
 import { Link, Form } from 'react-router-dom';
 import Wrapper from '../wrappers/Job';
@@ -27,8 +29,8 @@ const Job = ({ _id, position, company, jobLocation, jobType, createAt, jobStatus
                     <div className={`status ${jobStatus}`}>{jobStatus}</div>
                 </div>
                 <footer className='actions'>
-                    <Link className='btn edit-btn'>Edit</Link>
-                    <Form>
+                    <Link to={`../edit-job/${_id}`} className='btn edit-btn'>Edit</Link>
+                    <Form method='post' action={`../delete-job/${_id}`}>
                         <button type='submit' className='btn delete-btn'>Delete</button>
                     </Form>
                 </footer>

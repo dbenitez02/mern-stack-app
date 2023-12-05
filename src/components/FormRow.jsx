@@ -10,7 +10,7 @@ const FormRow = ({ type, name, labelText, defualtValue = "" }) => {
                 id={name}
                 name={name}
                 className="form-input"
-                placeholder={defualtValue}
+                defaultValue={defualtValue}
                 required />
         </div>
     );
