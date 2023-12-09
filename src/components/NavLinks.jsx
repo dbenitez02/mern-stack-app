@@ -4,12 +4,14 @@ import links from "../utils/links";
 
 // eslint-disable-next-line react/prop-types
 const NavLinks = ({ isBigSidebar }) => {
-    const { toggleSidebar } = useDashboardContext();
+    const { toggleSidebar, user } = useDashboardContext();
 
     return (
         <div className="nav-links">
             {links.map((link) => {
                 const { path, text, icon } = link;
+                const { role } = user;
+                if (role !== 'admin' && path === 'admin') return;
                 return (
                     <NavLink
                         to={path}
