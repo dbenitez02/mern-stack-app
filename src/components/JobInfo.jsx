@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import Wrapper from "../wrappers/JobInfo";
 
 const JobInfo = ({ icon, text }) => {
@@ -5,6 +6,7 @@ const JobInfo = ({ icon, text }) => {
         <Wrapper>
             <span className="job-icon">{icon}</span>
             <span className="job-text">{text}</span>
+
         </Wrapper>
     )
 };
